@@ -1,0 +1,10 @@
+@import "../../sass/global";
+
+.products {
+	flex-grow: 1;
+	height: 100px;
+	// background-color: blue;
+	&-container {
+		width: 100%;
+	}
+}
