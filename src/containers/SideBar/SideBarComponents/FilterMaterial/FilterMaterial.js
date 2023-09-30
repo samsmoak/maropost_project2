@@ -39,7 +39,7 @@ function FilterMaterial({
 	};
 
 	const handleCheckboxChange = (option) => {
-		console.log(option);
+		// console.log(option);
 		if (selectedMaterialOptions.includes(option)) {
 			// If the option is already selected, remove it from the array
 			const newSelectedOptions = selectedMaterialOptions.filter(
@@ -52,11 +52,14 @@ function FilterMaterial({
 			handleMaterialSelectedOptionsChange(newSelectedOptions);
 		}
 	};
+	const elementStyle = {
+		display: `${open ? "block" : "none"}`,
+	};
 
 	return (
 		<div className='filtermaterial'>
 			<FilterMaterialButton setOpen={setOpen} open={open} />
-			<div className='filtermaterial-items'>
+			<div className='filtermaterial-items' style={elementStyle}>
 				{displayedValues.map((product, key) => (
 					<CheckItem
 						product={product}

@@ -1,7 +1,7 @@
 import React from "react";
 import Routess from "../Routess";
 import { BrowserRouter, useLocation } from "react-router-dom";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/Navbar/Navbar";
 function MainLayout() {
 	const location = useLocation();
 	return (

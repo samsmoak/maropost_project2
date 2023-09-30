@@ -20,6 +20,7 @@ function FilterColor({
 	filter,
 	selectedColorOption,
 	handleColorSelectedOptionChange,
+	handleSliderChange,
 }) {
 	const [open, setOpen] = useState(false);
 	const [displayedValues, setDisplayedValues] = useState([]);
@@ -59,20 +60,24 @@ function FilterColor({
 		setStartIndex(0);
 	};
 
-	const handleRadioChange = (value) => {
-		console.log(value);
-		if (selectedColor !== value) {
-			setSelectedOption(value);
+	const handleRadioChange = (colorname, colorcode) => {
+		// console.log(colorname, colorcode);
+		if (selectedOption !== colorname) {
+			setSelectedOption(colorname);
 		} else {
 			setSelectedOption(""); // Unselect the radio button if it's already selected
 		}
+		handleColorSelectedOptionChange(colorcode);
+	};
+	const elementStyle = {
+		display: `${open ? "block" : "none"}`,
 	};
 
 	return (
 		<div className='filtercolor'>
 			<FilterColorButton setOpen={setOpen} open={open} />
 
-			<div className='filter-items'>
+			<div className='filter-items' style={elementStyle}>
 				{displayedValues.map((item, k) => (
 					<RadioItem
 						item={item}

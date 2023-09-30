@@ -40,7 +40,7 @@ function CheckItem({
 				</label>
 			</div>
 
-			<div className=''>({product.count})</div>
+			<div className='filtermaterial-items-item-count'>({product.count})</div>
 		</div>
 	);
 }

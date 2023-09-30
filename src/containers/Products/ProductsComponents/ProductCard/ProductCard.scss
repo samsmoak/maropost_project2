@@ -1,7 +1,7 @@
 @import "../../../../sass/global";
 
 .productcard {
-	background-color: brown;
+	// background-color: brown;
 	&-imagecontainer {
 		height: 400px;
 		width: 100%;
@@ -14,6 +14,9 @@
 		object-fit: fill;
 	}
 	&-stickercontainer {
+		color: white;
+		text-transform: uppercase;
+		font-weight: bold;
 		width: 100%;
 		display: flex;
 		justify-content: space-between;
@@ -24,12 +27,52 @@
 		position: relative;
 		&-text {
 			position: absolute;
-			top: 4px;
+			top: 6px;
 			left: 15px;
+		}
+		&-svg {
+			height: 100%;
+		}
+	}
+	&-textsticker {
+		background-color: #82b8d9;
+		display: flex;
+		align-items: center;
+		padding: 0px 10px;
+	}
+	&-textarea {
+		width: 100%;
+		padding: 20px 0px;
+		&-title {
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			text-transform: uppercase;
+			font-weight: bold;
+			margin-bottom: 20px;
+		}
+		&-price {
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			&-old {
+				margin-right: 10px;
+				color: #939393;
+				text-decoration: line-through;
+			}
 		}
 	}
 }
 
+@media (500px <=width <= 768px) {
+	.productcard-percentsticker-svg {
+		width: 80px;
+	}
+	.productcard-percentsticker-text {
+		top: 4px;
+		left: 6px;
+	}
+}
 @media (width >= 400px) {
 	.productcard {
 		width: 100%;
@@ -46,6 +89,9 @@
 @media (width >= 768px) {
 	.productcard-imagecontainer {
 		height: 400px;
+	}
+	.productcard-textsticker {
+		padding: 0px 20px;
 	}
 }
 @media (width >= 991px) {

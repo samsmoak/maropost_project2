@@ -5,6 +5,7 @@ import Products from "../../containers/Products/Products";
 import SideBar from "../../containers/SideBar/SideBar";
 import "./ResultPage.scss";
 import "../../containers/Products/Products.scss";
+import BreadCrumbs from "../../components/BreadCrumbs/BreadCrumbs";
 const fetchData = async (
 	apiUrl,
 	setProducts,
@@ -32,11 +33,70 @@ function ResultPage() {
 	useEffect(() => {
 		fetchData(apiUrl, setProducts, setFilter, setIsLoading, setError);
 	}, [apiUrl]);
+
+	const [selectedMaterialOptions, setSelectedMaterialOptions] = useState([]);
+	const [selectedColorOption, setSelectedColorOption] = useState(null);
+	const [sliderValue, setSliderValue] = useState(50);
+	const handleMaterialSelectedOptionsChange = (newSelectedOptions) => {
+		setSelectedMaterialOptions(newSelectedOptions);
+	};
+	const handleColorSelectedOptionChange = (newSelectedOption2) => {
+		setSelectedColorOption(newSelectedOption2);
+		// console.log(selectedColorOption);
+	};
+	const handleSliderChange = (newValue) => {
+		setSliderValue(newValue);
+	};
+	const handleSelectedMaterialClick = (optionValue) => {
+		// When a selected option is clicked, uncheck the corresponding checkbox
+		setSelectedMaterialOptions(
+			selectedMaterialOptions.filter((value) => value !== optionValue)
+		);
+	};
+	const handleSelectedColorClick = () => {
+		// When a selected option is clicked, unselect it (set to null)
+		setSelectedColorOption(null);
+	};
+	const handleRangeClick = () => {
+		// Reset the input range value to the initial value
+		setSliderValue(null);
+	};
+
 	return (
 		<div className='resultpage'>
-			<SideBar filter={filter} />
-			<div className='products'>
-				<Products products={products} />
+			<SideBar
+				filter={filter}
+				selectedColorOption={selectedColorOption}
+				handleColorSelectedOptionChange={handleColorSelectedOptionChange}
+				handleMaterialSelectedOptionsChange={
+					handleMaterialSelectedOptionsChange
+				}
+				selectedMaterialOptions={selectedMaterialOptions}
+				sliderValue={sliderValue}
+				handleRangeClick={handleRangeClick}
+				handleSelectedColorClick={handleSelectedColorClick}
+				handleSelectedMaterialClick={handleSelectedMaterialClick}
+				handleSliderChange={handleSliderChange}
+			/>
+			<div className=''>
+				<div className='resultpage-breadcrumbs'>
+					<BreadCrumbs
+						selectedMaterialOptions={selectedMaterialOptions}
+						selectedColorOption={selectedColorOption}
+						handleColorSelectedOptionChange={handleColorSelectedOptionChange}
+						handleMaterialSelectedOptionsChange={
+							handleMaterialSelectedOptionsChange
+						}
+						handleRangeClick={handleRangeClick}
+						// handleSliderChange={handleSliderChange}
+						sliderValue={sliderValue}
+						handleSelectedMaterialClick={handleSelectedMaterialClick}
+						handleSelectedColorClick={handleSelectedColorClick}
+					/>
+				</div>
+				<div className='products'>
+					<Products products={products} />
+				</div>
 			</div>
 		</div>
 	);

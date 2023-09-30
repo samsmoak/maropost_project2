@@ -14,19 +14,29 @@ function ProductCard({ product }) {
 		>
 			<div className='productcard-imagecontainer'>
 				<ProductCardImage src={product.image_url} alt='' />
-				<div className='productcard-stickercontainer'>
-					<ProductCardSticker />
-					<div>sales</div>
-				</div>
-			</div>
-			<div>
-				<div>{product.title}</div>
-				<div>
-					<div>
-						{`${product.compare_at !== null ? "$ " : " "}`}
-						{product.compare_at}
+				{product.compare_at && (
+					<div className='productcard-stickercontainer'>
+						<ProductCardSticker
+							oldprice={product.compare_at}
+							newprice={product.price}
+						/>
+						<div className='productcard-textsticker'>sales</div>
 					</div>
-					<div>$ {product.price}</div>
+				)}
+			</div>
+			<div className='productcard-textarea'>
+				<div className='productcard-textarea-title'>{product.title}</div>
+				<div className='productcard-textarea-price'>
+					<div className='productcard-textarea-price-old'>
+						{`${
+							product.compare_at !== null
+								? "$ " + product.compare_at.toString()
+								: " "
+						}`}
+					</div>
+					<div className='productcard-textarea-price-new'>
+						$ {product.price}
+					</div>
 				</div>
 			</div>
 		</div>

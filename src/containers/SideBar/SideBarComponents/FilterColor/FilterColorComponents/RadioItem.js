@@ -3,24 +3,24 @@ import "./../FilterColor.scss";
 
 function RadioItem({ item, k, selectedOption, handleRadioChange, color }) {
 	const colorcode = color.find((obj) => obj.name === item.value);
-	const colorcodelen = color.find((obj) => obj.code.length > 50);
+	// const colorcodelen = color.find((obj) => obj.code.length > 50);
 	// colorcodelencode = colorcodelen.code;
 
 	const elementStyle = {
 		backgroundColor: `${
-			selectedOption === item.value ? "gray" : colorcode.code
+			selectedOption === item.value ? "#939393" : colorcode.code
 		}`,
 		backgroundImage:
 			selectedOption !== item.value ? `url(${colorcode.code})` : "none",
 		backgroundSize: "cover",
 		backgroundRepeat: "no-repeat",
-		height: "30px",
-		width: "30px",
+		height: "25px",
+		width: "25px",
 		borderRadius: "50%",
 		position: "absolute",
 		top: "-5px",
 	};
-	console.log(colorcode.code.length);
+
 	return (
 		<div className='filtercolor-items-item'>
 			<label key={item.value} className='filtercolor-items-item-inputcontainer'>
@@ -30,7 +30,7 @@ function RadioItem({ item, k, selectedOption, handleRadioChange, color }) {
 						name='radioGroup'
 						value={item.value}
 						checked={selectedOption === item.value}
-						onChange={() => handleRadioChange(item.value)}
+						onChange={() => handleRadioChange(item.value, colorcode.code)}
 						// className='hidden'
 						style={{ opacity: "0" }}
 					/>
@@ -55,7 +55,7 @@ function RadioItem({ item, k, selectedOption, handleRadioChange, color }) {
 					{item.value}
 				</div>
 			</label>
-			<div className=''>({item.count}) </div>
+			<div className='filtercolor-items-item-count'>({item.count}) </div>
 		</div>
 	);
 }

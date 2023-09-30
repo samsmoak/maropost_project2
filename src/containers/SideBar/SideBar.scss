@@ -1,9 +1,24 @@
 .sidebar {
 	width: 100%;
-	padding: 10px 10px;
-	background-color: darkkhaki;
+	padding: 10px 20px;
+	// background-color: darkkhaki;
 
-	&-container {
+	&-breadcrumbs {
+		width: 100%;
+	}
+	&-title {
+		font-size: large;
+		text-transform: uppercase;
+		margin-bottom: 20px;
+	}
+	&-material {
+		margin-bottom: 20px;
+	}
+	&-color {
+		margin-bottom: 20px;
+	}
+	&-price {
+		margin-bottom: 20px;
 	}
 }
 
