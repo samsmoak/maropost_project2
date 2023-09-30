@@ -1,25 +1,22 @@
 import React from "react";
+import "./../FilterMaterial.scss";
 
 function MoreButton({ handleLoadMore }) {
 	return (
-		<button
-			onClick={handleLoadMore}
-			className='font-normal w-full text-sm flex justify-center items-center'
-		>
+		<div onClick={handleLoadMore} className='filtermaterial-items-button'>
 			<svg
 				xmlns='http://www.w3.org/2000/svg'
-				viewBox='0 0 24 24'
-				fill='currentColor'
-				class='w-4 h-4'
+				width='50'
+				height='50'
+				viewBox='0 0 50 50'
+				className='filtermaterial-items-button-svg'
 			>
-				<path
-					fill-rule='evenodd'
-					d='M12 3.75a.75.75 0 01.75.75v6.75h6.75a.75.75 0 010 1.5h-6.75v6.75a.75.75 0 01-1.5 0v-6.75H4.5a.75.75 0 010-1.5h6.75V4.5a.75.75 0 01.75-.75z'
-					clip-rule='evenodd'
-				/>
+				<rect x='10' y='23' width='30' height='4' fill='black' />
+				<rect x='23' y='10' width='4' height='30' fill='black' />
 			</svg>
-			More
-		</button>
+
+			<div>More</div>
+		</div>
 	);
 }
 

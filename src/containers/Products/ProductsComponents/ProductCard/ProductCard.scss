@@ -1,0 +1,54 @@
+@import "../../../../sass/global";
+
+.productcard {
+	background-color: brown;
+	&-imagecontainer {
+		height: 400px;
+		width: 100%;
+		background-color: aquamarine;
+		position: relative;
+	}
+	&-image {
+		width: 100%;
+		height: 100%;
+		object-fit: fill;
+	}
+	&-stickercontainer {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		position: absolute;
+		top: 0;
+	}
+	&-percentsticker {
+		position: relative;
+		&-text {
+			position: absolute;
+			top: 4px;
+			left: 15px;
+		}
+	}
+}
+
+@media (width >= 400px) {
+	.productcard {
+		width: 100%;
+	}
+}
+@media (width >= 500px) {
+	.productcard {
+		width: 100%;
+	}
+	.productcard-imagecontainer {
+		height: 300px;
+	}
+}
+@media (width >= 768px) {
+	.productcard-imagecontainer {
+		height: 400px;
+	}
+}
+@media (width >= 991px) {
+}
+@media (width >= 1280px) {
+}

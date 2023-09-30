@@ -1,0 +1,119 @@
+@import "../../../../sass/global";
+
+.filtermaterial {
+	width: 100%;
+
+	background-color: burlywood;
+	&-button {
+		width: 100%;
+		height: 40px;
+		background-color: white;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		&-svg {
+			// background-color: blueviolet;
+			color: black;
+			width: 40px;
+			height: 100%;
+		}
+	}
+	&-items {
+		width: 100%;
+		&-item {
+			width: 100%;
+			padding: 10px 0px;
+			display: flex;
+			justify-content: space-between;
+			&-inputarea {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				&-value {
+					background-color: aqua;
+					height: 100%;
+					margin-left: 40px;
+					display: flex;
+					align-items: center;
+					text-wrap: nowrap;
+				}
+			}
+		}
+		&-buttons {
+			padding: 20px 0px;
+			width: 100%;
+			display: flex;
+			justify-content: center;
+		}
+		&-button {
+			display: flex;
+			align-items: center;
+			cursor: pointer;
+			&-svg {
+				// background-color: blueviolet;
+				color: black;
+				width: 20px;
+				height: 100%;
+			}
+		}
+	}
+}
+
+.checkbox-container {
+	display: inline-block;
+	position: relative;
+	cursor: pointer;
+	background-color: white;
+	border: 1.5px solid #cccccc;
+	height: 30px;
+	width: 30px;
+	&:hover {
+		border: 1px solid black !important;
+	}
+}
+
+.styled-checkbox {
+	opacity: 0;
+	position: absolute;
+}
+
+.checkmark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 28px; /* Adjust the size of the checkbox */
+	width: 28px; /* Adjust the size of the checkbox */
+	background-color: white; /* Background color of the checkbox */
+	// border: 1px solid black;
+	border: 1px solid black;
+}
+
+.checkmark::before {
+	content: "";
+	position: absolute;
+	display: block;
+	left: 9px;
+	top: 6px;
+	width: 6px;
+	height: 11px;
+	border: solid black;
+	border-width: 0 2px 2px 0;
+	transform: rotate(45deg);
+}
+.checkbox-name {
+	// background-color: aqua;
+	position: absolute;
+	height: 100%;
+	width: 10rem;
+	margin-left: 40px;
+	display: flex;
+	align-items: center;
+}
+
+// .styled-checkbox:checked + .checkmark::before {
+// 	display: block;
+// }
+// .styled-checkbox:checked + .checkbox-container {
+// 	border: 0px;
+// }

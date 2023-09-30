@@ -1,13 +1,13 @@
 import React from "react";
-
+import "./../FilterMaterial.scss";
 function LessButton({ handleLoadLess }) {
 	return (
-		<button className='' onClick={handleLoadLess}>
+		<div className='filtermaterial-items-button' onClick={handleLoadLess}>
 			<svg
 				xmlns='http://www.w3.org/2000/svg'
 				viewBox='0 0 24 24'
 				fill='currentColor'
-				class='w-4 h-4'
+				className='filtermaterial-items-button-svg'
 			>
 				<path
 					fill-rule='evenodd'
@@ -16,7 +16,7 @@ function LessButton({ handleLoadLess }) {
 				/>
 			</svg>
 			Less
-		</button>
+		</div>
 	);
 }
 

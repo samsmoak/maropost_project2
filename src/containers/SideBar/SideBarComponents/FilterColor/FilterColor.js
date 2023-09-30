@@ -59,7 +59,7 @@ function FilterColor({
 		setStartIndex(0);
 	};
 
-	const handleRadioChange = (d, value) => {
+	const handleRadioChange = (value) => {
 		console.log(value);
 		if (selectedColor !== value) {
 			setSelectedOption(value);
@@ -69,10 +69,10 @@ function FilterColor({
 	};
 
 	return (
-		<div className=''>
+		<div className='filtercolor'>
 			<FilterColorButton setOpen={setOpen} open={open} />
 
-			<div>
+			<div className='filter-items'>
 				{displayedValues.map((item, k) => (
 					<RadioItem
 						item={item}
@@ -82,7 +82,7 @@ function FilterColor({
 						color={color}
 					/>
 				))}
-				<div className={`w-full mt-4 ${!open && "hidden"}`}>
+				<div className='filtercolor-items-buttons'>
 					{endOfList && startIndex > 0 && (
 						<LessButton handleLoadLess={handleLoadLess} />
 					)}

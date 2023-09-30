@@ -1,11 +1,11 @@
 import React from "react";
-import ProductCard from "../../components/ProductCard/ProductCard";
+import ProductCard from "./ProductsComponents/ProductCard/ProductCard";
 import "./Products.scss";
 
 function Products({ products }) {
 	return (
-		<div className='product'>
-			<div className='product-container'>
+		<div className='products'>
+			<div className='products-container'>
 				{products.map((product, key) => (
 					<ProductCard product={product} key={key} />
 				))}

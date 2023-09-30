@@ -3,6 +3,7 @@ import CheckItem from "./FilterMaterialComponent/CheckItem";
 import MoreButton from "./FilterMaterialComponent/MoreButton";
 import LessButton from "./FilterMaterialComponent/LessButton";
 import FilterMaterialButton from "./FilterMaterialComponent/FilterMaterialButton";
+import "./FilterMaterial.scss";
 
 function FilterMaterial({
 	filter,
@@ -38,6 +39,7 @@ function FilterMaterial({
 	};
 
 	const handleCheckboxChange = (option) => {
+		console.log(option);
 		if (selectedMaterialOptions.includes(option)) {
 			// If the option is already selected, remove it from the array
 			const newSelectedOptions = selectedMaterialOptions.filter(
@@ -52,9 +54,9 @@ function FilterMaterial({
 	};
 
 	return (
-		<div>
+		<div className='filtermaterial'>
 			<FilterMaterialButton setOpen={setOpen} open={open} />
-			<div>
+			<div className='filtermaterial-items'>
 				{displayedValues.map((product, key) => (
 					<CheckItem
 						product={product}
@@ -63,7 +65,7 @@ function FilterMaterial({
 						handleCheckboxChange={handleCheckboxChange}
 					/>
 				))}
-				<div className=''>
+				<div className='filtermaterial-items-buttons'>
 					{endOfList && startIndex > 0 && (
 						<LessButton handleLoadLess={handleLoadLess} />
 					)}

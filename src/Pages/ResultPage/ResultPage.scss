@@ -1,5 +1,11 @@
 .resultpage {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	width: 100vw;
+}
+@media (width >= 768px) {
+	.resultpage {
+		display: flex;
+		flex-direction: row;
+	}
 }
