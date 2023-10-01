@@ -40,21 +40,6 @@ function SideBar({
 			<div className='sidebar-price'>
 				<FilterPrice filter={filter} onSliderChange={handleSliderChange} />
 			</div>
-			{/* <div className='sidebar-breadcrumbs'>
-				<BreadCrumbs
-					selectedMaterialOptions={selectedMaterialOptions}
-					selectedColorOption={selectedColorOption}
-					handleColorSelectedOptionChange={handleColorSelectedOptionChange}
-					handleMaterialSelectedOptionsChange={
-						handleMaterialSelectedOptionsChange
-					}
-					handleRangeClick={handleRangeClick}
-					// handleSliderChange={handleSliderChange}
-					sliderValue={sliderValue}
-					handleSelectedMaterialClick={handleSelectedMaterialClick}
-					handleSelectedColorClick={handleSelectedColorClick}
-				/>
-			</div> */}
 		</div>
 	);
 }

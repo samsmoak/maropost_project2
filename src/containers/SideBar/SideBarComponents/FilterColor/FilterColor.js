@@ -42,7 +42,7 @@ function FilterColor({
 	useEffect(() => {
 		// Update the displayed values when facetsData changes
 		if (filter.length > 0) {
-			const nextValues = filter[1].values.slice(
+			const nextValues = filter[1]?.values.slice(
 				startIndex,
 				startIndex + itemsPerPage
 			);
@@ -92,7 +92,7 @@ function FilterColor({
 						<LessButton handleLoadLess={handleLoadLess} />
 					)}
 					{filter.length > 0 &&
-						startIndex + itemsPerPage < filter[1].values.length && (
+						startIndex + itemsPerPage < filter[1]?.values.length && (
 							<MoreButton handleLoadMore={handleLoadMore} />
 						)}
 				</div>

@@ -105,7 +105,9 @@
 		padding: 0px 0px;
 	}
 	.breadcrumbs-titles {
-		display: flex;
+		display: grid;
+		width: auto;
+		grid-template-columns: auto 1fr;
 	}
 }
 @media (width >= 991px) {
