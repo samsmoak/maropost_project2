@@ -25,12 +25,12 @@
 @media (width >= 500px) {
 	.products-container {
 		grid-template-columns: repeat(3, 1fr);
+		padding: 5px 7px;
 	}
 }
 @media (width >= 768px) {
 	.products-container {
 		grid-template-columns: repeat(2, 1fr);
-		padding: 5px 7px;
 	}
 }
 @media (width >= 991px) {
