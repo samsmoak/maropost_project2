@@ -6,7 +6,7 @@
 
 	&-container {
 		display: grid;
-		padding: 5px 7px;
+		padding: 5px 15px;
 		grid-template-rows: 1fr;
 		column-gap: 10px;
 	}
@@ -30,6 +30,7 @@
 @media (width >= 768px) {
 	.products-container {
 		grid-template-columns: repeat(2, 1fr);
+		padding: 5px 7px;
 	}
 }
 @media (width >= 991px) {
