@@ -1,7 +1,7 @@
 import React from "react";
 import "./../ProductCard.scss";
 
-function ProductTitle(title) {
+function ProductTitle({ title }) {
 	return <div className='productcard-textarea-title'>{title}</div>;
 }
 
