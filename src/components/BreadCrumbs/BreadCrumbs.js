@@ -46,9 +46,10 @@ function BreadCrumbs({
 							" "
 						)}
 					</div>
+					<ObliqueSvg />
+					{/* <div className='breadcrumbs-color-linethrough'></div> */}
 				</div>
 			)}
-			{selectedColorOption && <ObliqueSvg />}
 
 			{sliderValue && (
 				<div className='breadcrumbs-price'>
@@ -70,9 +71,11 @@ function BreadCrumbs({
 							/>
 						</svg>
 					</div>
+					<ObliqueSvg />
+					{/* <div className='linethrough'></div> */}
 				</div>
 			)}
-			{sliderValue && <ObliqueSvg />}
+			{/* {sliderValue && <ObliqueSvg />} */}
 			<div className='breadcrumbs-titles'>
 				{selectedMaterialOptions?.map((i, v) => {
 					return (
@@ -95,6 +98,8 @@ function BreadCrumbs({
 									/>
 								</svg>
 							</div>
+							<ObliqueSvg />
+							{/* <div className='linethrough'></div> */}
 						</div>
 					);
 				})}
