@@ -1,6 +1,6 @@
 .sidebar {
 	width: 100%;
-	padding: 10px 20px;
+	padding: 10px 15px;
 	// background-color: darkkhaki;
 
 	&-breadcrumbs {
@@ -29,6 +29,7 @@
 @media (width >= 768px) {
 	.sidebar {
 		width: 400px;
+		padding: 10px 20px;
 	}
 }
 @media (width >= 991px) {
